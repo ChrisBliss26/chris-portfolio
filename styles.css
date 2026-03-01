@@ -1,27 +1,24 @@
-body {
-  background-color: #f5f5f5;
-}
-
-
 /* =========================
-   CUSTOM FONTS
+   1. CUSTOM FONTS
 ========================= */
 
 @font-face {
   font-family: "Tusker";
-  src: url("assets/fonts/tusker.woff2") format("woff2");
+  src: url("assets/fonts/tusker.woff2") format("woff2"),
+       url("assets/fonts/tusker.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
+
 /* =========================
-   DESIGN SYSTEM VARIABLES
+   2. DESIGN TOKENS
 ========================= */
 
-
 :root {
-  /* Spacing (8px scale) */
+
+  /* Spacing Scale (8px system) */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 16px;
@@ -32,41 +29,115 @@ body {
   --space-8: 96px;
 
   /* Colours */
-  --color-text: #111;
-  --color-bg: #f5f5f5;
+  --color-text: #111111;
+  --color-bg: #ffffff;
 
-  /* Typography scale (example) */
+  /* Typography */
   --text-base: 16px;
-  --text-lg: 20px;
-  --text-xl: 32px;
-  --text-hero: 56px;
+  --text-hero: 72px;
 }
 
-/* Reset */
+
+/* =========================
+   3. RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base */
+
+/* =========================
+   4. BASE STYLES
+========================= */
+
 body {
   font-family: "aktiv-grotesk-extended", sans-serif;
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  font-size: var(--text-base);
   line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-synthesis: none;
+}
+
+
+/* =========================
+   5. LAYOUT SYSTEM
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 1728px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+
+/* Responsive Margins */
+
+@media (max-width: 1200px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+/* =========================
+   6. HEADER
+========================= */
+
+.site-header {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: var(--space-5);
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================
+   7. SECTIONS
+========================= */
+
+.hero {
+  padding-top: 160px;
+  padding-bottom: 160px;
 }
 
 .hero h1 {
   font-family: "Tusker", sans-serif;
+  font-weight: 900;
   font-size: var(--text-hero);
+  max-width: 1100px;
 }
 
 .about {
-  padding: var(--space-6);
+  padding-top: 120px;
+  padding-bottom: 120px;
   max-width: 720px;
 }
 
 .about p {
-  font-size: var(--text-base);
+  font-size: 20px;
 }
